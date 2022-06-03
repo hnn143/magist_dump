@@ -1,0 +1,2 @@
+select COUNT(DISTINCT product_id) as products_number 
+from products;
