@@ -1,8 +1,12 @@
 USE magist;
 
 SELECT COUNT(DISTINCT product_id) FROM products;
+
 SELECT * FROM product_category_name_translation;
+
 SELECT COUNT(DISTINCT product_category_name) FROM product_category_name_translation;
+
+# total number of Tech products
 SELECT COUNT(*)
 FROM products
 LEFT JOIN product_category_name_translation
@@ -10,6 +14,8 @@ USING (product_category_name)
 WHERE product_category_name_english IN ('audio', 'cine_photo', 'consoles_games', 'electronics', 'computers_accessories', 'pc_gamer', 'computers', 'tablets_printing_image', 'telephony', 'watches_gifts')
 ;
 -- total 3425
+
+# number of products per tech category
 SELECT product_category_name_english, COUNT(*)
 FROM products
 LEFT JOIN product_category_name_translation
@@ -18,6 +24,7 @@ WHERE product_category_name_english IN ('audio', 'cine_photo', 'consoles_games',
 GROUP BY product_category_name_english
 ORDER BY COUNT(*) DESC;
 
+# number of ordered items per tech category
 SELECT product_category_name_english, COUNT(*)
 FROM order_items
 LEFT JOIN products
