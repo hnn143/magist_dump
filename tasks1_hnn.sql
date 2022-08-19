@@ -94,6 +94,7 @@ FROM order_payments
 WHERE payment_value != 0;
 -- lowest payment value (w/o 0): 0.1, highest payment value: 13664.1
 
+
 /*
 SELECT * FROM products;
 SELECT * FROM order_items;
