@@ -239,7 +239,7 @@ ORDER BY n_items DESC;
 --     Are orders delivered on time?
 -- -> No
 
-
+/*
 SELECT * FROM order_items;
 SELECT * FROM orders;
 SELECT * FROM products;
@@ -249,3 +249,4 @@ SELECT * FROM sellers;
 SELECT order_status, count(*) 	
 FROM orders
 GROUP BY order_status;
+*/
